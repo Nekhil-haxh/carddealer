@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#Developed by Nekhil Ravi
+#Edited Default Code by Nekhil R
 
 import os
 import sys
