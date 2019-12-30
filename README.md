@@ -1,2 +1,2 @@
 # CardDealer
-All files are configured here.
+Everything is attached here
