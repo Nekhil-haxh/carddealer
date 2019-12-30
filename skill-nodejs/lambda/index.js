@@ -37,9 +37,7 @@ const NAME_CONTROL = 'control';
     }
 };
 
-// Add the speed value to the session attribute.
-// This allows other intent handler to use the specified speed value
-// without asking the user for input.
+
 const SetPlayerIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -47,7 +45,7 @@ const SetPlayerIntentHandler = {
     },
     handle: function (handlerInput) {
 
-        // Bound speed to (1-100)
+        
         let player = Alexa.getSlotValue(handlerInput.requestEnvelope, 'Player');
         player = Math.max(1, Math.min(10, parseInt(player)));
         Util.putSessionAttribute(handlerInput, 'player', player);
@@ -65,7 +63,7 @@ const GiveIntentHandler = {
     },
     handle: function (handlerInput) {
         
-        // Bound speed to (1-100)
+        
         let value = Alexa.getSlotValue(handlerInput.requestEnvelope, 'Value');
         value = Math.max(1, Math.min(10, parseInt(value)));
         Util.putSessionAttribute(handlerInput, 'value', value);
@@ -87,8 +85,7 @@ const GiveIntentHandler = {
             .getResponse();
     }
 };
-// Construct and send a custom directive to the connected gadget with
-// data from the MoveIntent request.
+
 const DistributeIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
