@@ -34,17 +34,11 @@ class MindstormsGadget(AlexaGadget):
         """
         super().__init__()
 
-        # Gadget state
-        #self.patrol_mode = False
-
         # Ev3dev initialization
         self.leds = Leds()
         self.sound = Sound()
         self.large = LargeMotor(OUTPUT_B)
         self.medium = MediumMotor(OUTPUT_A)
-
-        # Start threads
-        #threading.Thread(target=self._patrol_thread, daemon=True).start()
 
     def on_connected(self, device_addr):
         """
@@ -89,7 +83,7 @@ class MindstormsGadget(AlexaGadget):
         Handles distribute commands from the directive.
         Retrieves the player variable and starts distribution.
         """
-        print("Distribute command: ({})".format(player), file=sys.stderr)
+        print("Distribute command: ({})".format(player), file=sys.stderr)#Print output
         x=300/player
         n=64/(player+1)
         for i in range(int(n)):
