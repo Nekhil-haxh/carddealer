@@ -18,8 +18,7 @@ In the above piece of code as you can see, when the players are set and if we sa
 The "x=-x" expression reverse the distribution.
 
 
-
-def _distribute(self,player:int, is_blocking=False):
+     def _distribute(self,player:int, is_blocking=False):
 
         """
         Handles distribute commands from the directive.
@@ -41,7 +40,7 @@ When we ask for the cards(the player variable should to be set).The cards you ar
 
 
 
-if control_type == "give":
+            if control_type == "give":
 
                 # Expected params: [value]
                 print(int(payload["value"]))
@@ -49,7 +48,7 @@ if control_type == "give":
                 
   Then it will call the give function as shown below and distribute the required cards by looking the value variale.
   
-   def _give(self,value:int,is_blocking=False):
+      def _give(self,value:int,is_blocking=False):
   
         print("Give command: ({})".format(value), file=sys.stderr)
         for j in range(value):
