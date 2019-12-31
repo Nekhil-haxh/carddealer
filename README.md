@@ -4,10 +4,15 @@ Everything is attached here
 Also in this section I am explaining the python code.
 
 control_type = payload["type"]
+
             if control_type == "distribute":
+            
                 # Expected params: [player]
+                
                 print(int(payload["player"]))
+                
                 self._distribute(int(payload["player"]))
+                
                 
 In the above piece of code as you can see, when the players are set and if we say "distribute" command.It will call the distribute function from the if statement. In the function,the "x" variable(defines the angle of seperation of the distributing cards) and "n" variable(no. of times the first for loop executes) will get a value according to the player values.You can adjust the speed percent and the rotations according to the card type. The fisrt negative rotations of medium motor will eject the card and the second positive rotations will level the deck. The whole cards will be distributed by the for and the nested for loops.
 The "x=-x" expression reverse the distribution.
